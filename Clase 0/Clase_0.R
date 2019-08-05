@@ -20,9 +20,11 @@ diametro <- c(12, 8.6, 9.2, 7.7, 12.9, 11.7, 9.7, 14.2,
               11.8, 14.3, 12.5)
 
 diametro
+
 # Medidas de tendencia central
 mean(diametro)
 median(diametro)
+fivenum(diametro)
 
 #MEdias de dispersión
 sd(diametro)
@@ -38,3 +40,29 @@ boxplot(diametro, horizontal = TRUE, col = "lightblue", main= "Diámetro",
 
 DB_alturas <- read.csv("C:/MCF202-2019/MCF202/ALTURAS/alturas.csv", header = T)
 head(DB_alturas)
+boxplot(DB_alturas$crecimiento)
+boxplot(DB_alturas$crecimiento ~ DB_alturas$tratamiento,
+        col="lightgreen",
+        xlab = "tratamientos",
+        ylab = "crecimiento (cm)",
+        main = "Efectos del fertilizante")
+
+mean(DB_alturas$crecimiento)
+
+
+# Restricciones -----------------------------------------------------------
+
+sum(DB_alturas$crecimiento < mean(DB_alturas$crecimiento))
+
+
+# Excluir el Tratamiento A ------------------------------------------------
+
+
+TratA <- DB_alturas[(DB_alturas$tratamiento =="TA"),]
+
+
+# Submuestra ------------------------------------------------------------
+
+T.mean <- subset(DB_alturas, crecimiento >= mean(DB_alturas$crecimiento))
+boxplot(T.mean$crecimiento ~ T.mean$tratamiento)
+
