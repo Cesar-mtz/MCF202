@@ -2,6 +2,9 @@
 # 05/08/2019
 # Clase 0
 
+##Contenido del curso
+
+##Script
 
 # Pasos básicos -----------------------------------------------------------
 
@@ -30,3 +33,8 @@ var(diametro)
 
 boxplot(diametro, horizontal = TRUE, col = "lightblue", main= "Diámetro",
         xlab="D (cm)")
+
+# Importar excel ----------------------------------------------------------
+
+DB_alturas <- read.csv("C:/MCF202-2019/MCF202/ALTURAS/alturas.csv", header = T)
+head(DB_alturas)
