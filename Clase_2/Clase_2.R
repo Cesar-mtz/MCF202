@@ -50,3 +50,33 @@ var.test(Tvivero$IE ~ Tvivero$Tratamiento)
 t.test(Tvivero$IE ~ Tvivero$Tratamiento, var.equal = T)
 #Se rechaza la H0 se acepta la H1 ya que el valor de p (0.004)
 #es menor a 0.05 significando que si influye en el IE en las plantas
+
+
+t.test(Tvivero$IE ~ Tvivero$Tratamiento)
+
+
+
+# Prueba de t muestras dependientes ---------------------------------------
+# paired es para diferente tiempo
+t.test(Tvivero$IE ~ Tvivero$Tratamiento, paired = T)
+
+
+# Ejercicio de Produccion -------------------------------------------------
+
+inventario <- read.csv("C:/MCF202-2019/MCF202/DATOS/produccion.csv", header = T)
+summary(inventario)
+
+boxplot(inventario$Kgsem ~ inventario$Tiempo, col="lightblue")
+
+t.test(inventario$Kgsem ~ inventario$Tiempo, paired = T)
+
+t.test(inventario$Germ ~ inventario$Tiempo, paired = T)
+boxplot(inventario$Germ ~ inventario$Tiempo, col= "lightgreen")
+
+
+# RESTRICCION  ------------------------------------------------------------
+
+
+tapply(inventario$Germ, inventario$Tiempo, mean) 
+boxplot(inventario$Germ ~ inventario$Tiempo, col= "lightgreen")
+
