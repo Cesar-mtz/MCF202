@@ -61,7 +61,7 @@ t.test(Tvivero$IE ~ Tvivero$Tratamiento)
 t.test(Tvivero$IE ~ Tvivero$Tratamiento, paired = T)
 
 
-# Ejercicio de Produccion -------------------------------------------------
+# Ejercicio de ProducciÓn -------------------------------------------------
 
 inventario <- read.csv("C:/MCF202-2019/MCF202/DATOS/produccion.csv", header = T)
 summary(inventario)
@@ -74,7 +74,7 @@ t.test(inventario$Germ ~ inventario$Tiempo, paired = T)
 boxplot(inventario$Germ ~ inventario$Tiempo, col= "lightgreen")
 
 
-# RESTRICCION  ------------------------------------------------------------
+# RESTRICCIÓN  ------------------------------------------------------------
 
 
 tapply(inventario$Germ, inventario$Tiempo, mean) 
