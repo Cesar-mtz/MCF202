@@ -28,6 +28,7 @@ DBH.media <- subset(cuadro1, Diametro < mean(cuadro1$Diametro))
 DBH.16  <- subset(cuadro1, Diametro > 16)
 
 
+
 # Aplicar subset a las siguientes Especies ----------------------------------------------------------
 
 # Subset para la Especie Cedro --------------------------------------------
@@ -87,7 +88,7 @@ sd(cuadro1$Vecinos)
 
 mean(Vecinos.3$Vecinos)
 sd(Vecinos.3$Vecinos)
-
+ 
 mean(Vecinos.4$Vecinos)
 sd(Vecinos.4$Vecinos)
 
